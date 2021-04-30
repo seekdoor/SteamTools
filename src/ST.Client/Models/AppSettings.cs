@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options;
 using System.Application.Security;
 using System.Linq;
 using System.Properties;
@@ -83,9 +83,9 @@ namespace System.Application.Models
             {
                 var pk = typeof(AppSettings).Assembly.GetName().GetPublicKey();
                 if (pk == null) return false;
-                var pkStr = ", PublicKey=" + string.Join(string.Empty, pk.Select(x => x.ToString("x2")));
-                var r = pkStr == ThisAssembly.PublicKey;
-                if (!r) return false;
+                //var pkStr = ", PublicKey=" + string.Join(string.Empty, pk.Select(x => x.ToString("x2")));
+                //var r = pkStr == ThisAssembly.PublicKey;
+                //if (!r) return false;
                 try
                 {
                     return Aes != null && RSA != null;
